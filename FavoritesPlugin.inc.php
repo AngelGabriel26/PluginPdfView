@@ -1,44 +1,32 @@
 <?php
 
-// Import the GenericPlugin class from the PKP library
 import('lib.pkp.classes.plugins.GenericPlugin');
 
-// Define the FavoritesPlugin class, extending from GenericPlugin
 class FavoritesPlugin extends GenericPlugin {
-    
-    // Register the plugin, overriding the register method
+
     function register($category, $path, $mainContextId = null) {
-        // If the parent class registers successfully
-        if (parent::register($category, $path, $mainContextId)) {
-            // Register a hook to add the favorites button to the template display
-            HookRegistry::register('TemplateManager::display', array($this, 'callbackAddFavoritesButton'));
-            return true;
+        if (!parent::register($category, $path, $mainContextId)) return false;
+
+        if ($this->getEnabled()) {
+            HookRegistry::register('TemplateManager::display', array($this, 'callbackAddTemplate'));
         }
-        return false;
+
+        return true;
     }
 
-    // Return the display name of the plugin
     function getDisplayName() {
-        return __('Favorites Plugin');
+        return __('plugins.generic.fav.displayName');
     }
 
-    // Return the description of the plugin
     function getDescription() {
-        return __('This plugin allows users to add articles to their favorites list.');
+        return __('plugins.generic.fav.description');
     }
 
-    // Callback function to add the favorites button to the template
-    function callbackAddFavoritesButton($hookName, $params) {
-        // Get the TemplateManager object from the parameters
+    function callbackAddTemplate($hookName, $params) {
         $templateMgr = $params[0];
-        // Reference to the output parameter
-        $output =& $params[2];
 
-        // Define the favorites button HTML
-        $favoritesButton = '<button class="button add-to-favorites" onclick="addToFavorites()">Add to Favorites</button>';
-        // Assign the favorites button HTML to a variable in the template
-        $templateMgr->assign('favoritesButton', $favoritesButton);
-
-        return false;
+        // Pass the variable 'pluginEnabled' to the template
+        $templateMgr->assign('pluginEnabled', true);
     }
 }
+?>
