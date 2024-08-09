@@ -1,33 +1,39 @@
 User Manual
-This manual provides detailed instructions for installing and using the video plugin developed by the Base4 team. This plugin allows the OJS platform to be independent of third-party services by integrating its own video player, facilitating the viewing of multimedia content.
 
+This manual provides detailed instructions for installing and using the Favorites Plugin developed by the team. This plugin allows OJS users to add articles to a favorites list and manage them efficiently from their user account.
 System Requirements
-OJS version: 3.3.0
+
+    OJS version: 3.3 or higher
+
 Installation
-1.      Download the Plugin:
-Download the plugin from the following repository: GitHub - video-player-plugin.
-The file will be downloaded in .zip format.
-Unzip the .zip file, inside there will be a file in .tar.gz format, DO NOT UNZIP THE tar.gz
-2.      Install and Activation the Plugin:
-You’ve already started your session in your articles. Now go to the Control panel > Website > Modules.
-Click on Load a new module
-There we upload the tar.gz file and wait for it to finish uploading.
-Once finished we only have to verify that it is activated, if a filled box does not appear we fill it in
+1. Download the Plugin
+
+    Download the plugin from the following repository: GitHub - Favorites Plugin.
+    The file will be downloaded in .zip format.
+    Unzip the .zip file. Inside, there will be a file in .tar.gz format. DO NOT unzip the .tar.gz file.
+
+2. Install and Activate the Plugin
+
+    Log in to your OJS admin account.
+    Go to Control Panel > Website > Plugins.
+    Click on Upload a New Plugin.
+    Upload the .tar.gz file and wait for the upload to complete.
+    Once finished, verify that the plugin is activated. If a filled checkbox does not appear, check it to activate the plugin.
+
 Using the Plugin
-1.      How to use?:
-To use the plugin you must go to your Control Panel > Submissions > Files > View > Publication (If it is published, the publication must be removed first) > Galleys > Add Galley
-In the Add Galley section, you will find the following fields:
-Tag: Enter a descriptive name or title for the video.
-Language: Select your preferred language.
-URL Path: Leave it blank
-You will be redirected to the Upload a file ready for publication tab, with the following field:
-Item Component: Select the appropriate one.
-Box: You load the video
-Click on Continue
-You fill in the respective fields requested by the video
-File added appears, click Complete
-With this the video is already uploaded and ready to watch.
-2.      Viewing the Video:
-To view the video, click on the name of your journal in the upper left corner.
-Navigate to the issue you just uploaded.
-The video player should be ready and functioning.
+1. Adding Articles to Favorites
+
+    Navigate to any article page after logging in to your user account.
+    On the article page, click the Add to Favorites button to add the article to your favorites list.
+
+2. Viewing the Favorites List
+
+    Go to your user profile by clicking on your username in the top right corner.
+    Click on the My Favorites tab in your user panel.
+    Here, you will see all the articles you have added to your favorites list.
+
+3. Managing Favorites
+Removing Articles from Favorites:
+
+    In the My Favorites section, click the Remove button next to any article you want to remove from your favorites list.
+    Confirm the removal when prompted.
